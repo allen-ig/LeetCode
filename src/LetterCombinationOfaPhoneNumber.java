@@ -13,7 +13,15 @@ public class LetterCombinationOfaPhoneNumber {
         return res;
     }
 
-    public List<String> helper(List<String> res, String digits, String s, int index){
-
+    public void helper(List<String> res, String digits, String s, int index){
+        if (index == digits.length()) {
+            res.add(s);
+            return;
+        }
+        String letters = mapping[digits.charAt(index) - '0'];
+        for (int i = 0; i < letters.length(); i++){
+            helper(res, digits, s + letters.charAt(i), index + 1);
+        }
     }
 }
+
