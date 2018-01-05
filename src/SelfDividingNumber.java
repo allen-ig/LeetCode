@@ -18,14 +18,9 @@ public class SelfDividingNumber {
         int digit;
         while(t != 0){
             digit = t % 10;
-            if (digit == 0){
-                return false;
-            }
-            if (num % digit != 0){
-                return false;
-            }
+            if (digit == 0) return false;
+            if (num % digit != 0) return false;
             t /= 10;
-
         }
         return true;
     }
