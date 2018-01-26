@@ -7,7 +7,7 @@ public class IslandPerimeter {
         m = grid.length;
         if(m == 0) return 0;
         n = grid[0].length;
-        if(grid == null || n == 0) return 0;
+        if(n == 0) return 0;
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
                 if(grid[i][j] == 1){
@@ -41,5 +41,6 @@ public class IslandPerimeter {
         //System.out.println(res);
     }
 }
+
 
 
