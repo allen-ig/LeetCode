@@ -15,19 +15,27 @@ public class BinaryTreeInorderTraversal {
 
     /**
      * iterative solution
+     * using stack to simulate the process of recursion
      * @param root is the root of a binary tree.
      * @return
      */
 
-    public List<Integer> inorderTraversal(TreeNode root) {
-        if (root == null) return new LinkedList<>();
-        List<Integer> res = new LinkedList<>();
-        TreeNode cur = root;
-        while (cur.left != null){
-            cur = cur.left;
+        public List<Integer> inorderTraversal(TreeNode root) {
+            if (root == null) return new LinkedList<>();
+            Stack<TreeNode> working = new Stack<>();
+            List<Integer> res = new LinkedList<>();
+            TreeNode cur = root;
+            while (!working.isEmpty() || cur != null){
+                while (cur != null){                    //travel to each node's left child until there is no left one
+                    working.push(cur);
+                    cur = cur.left;
+                }
+                cur = working.pop();
+                res.add(cur.val);
+                cur = cur.right;
+            }
+            return res;
         }
-        return res;
-    }
 
     /**
      * recursive solution with helper method to add node into res recursively.
