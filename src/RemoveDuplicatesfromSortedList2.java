@@ -11,4 +11,24 @@ public class RemoveDuplicatesfromSortedList2 {
         }
         return head;
     }
+
+    public ListNode deleteDuplicates2(ListNode head){
+        ListNode temp = new ListNode(-1);
+        ListNode after = head;
+        ListNode before = temp;
+        before.next = after;
+        while (after != null){
+            while (after.next != null && after.next.val == after.val){
+                after = after.next;
+            }
+            if (before.next != after){
+                before.next = after.next;
+                after = before.next;
+            }else{
+                after = after.next;
+                before = before.next;
+            }
+        }
+        return temp.next;
+    }
 }
