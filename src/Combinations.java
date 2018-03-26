@@ -11,8 +11,7 @@ public class Combinations {
 
     private void helper(List<List<Integer>> res, List<Integer> list, int start, int n, int k){
         if (k == 0) {
-            res.add(new ArrayList(list));
-            return;
+            res.add(new ArrayList<>(list));
         }
         else{
             for (int i = start; i <= n; i++){
