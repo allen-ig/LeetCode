@@ -1,11 +1,13 @@
 public class UniqueBinarySearchTree {
-    public int maxProfit(int[] prices) {
-        int max = 0;
-        int maxCur = 0;
-        for (int i = 1; i < prices.length; i++){
-            max = Math.max(0, max += prices[i] - prices[i - 1]);
-            maxCur = Math.max(maxCur, max);
+    public int numTrees(int n) {
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++){
+            for (int j = 1; j <= i; j++){
+                dp[i] += dp[i - j] * dp[j - 1];
+            }
         }
-        return maxCur;
+        return dp[n];
     }
 }
