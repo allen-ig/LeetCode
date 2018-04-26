@@ -1,7 +1,6 @@
 public class FactorialTrailingZeroes {
     /**
      * time: O(log(n))
-     * 
      * @param n
      * @return
      */
