@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class BinarySearchTreePreorderTraversal {
+public class BinaryTreePreorderTraversal {
     /**
      * space: O(n)
      * time: O(n)
